@@ -237,7 +237,7 @@ header
   z-index: 103;
   .packages {
     // margin-top: -1500px;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
     &__title {
       div {
         @include flex(space-between, center, row);
@@ -306,6 +306,16 @@ header
     .active {
       border: 2px solid $ModerateCyan;
     }
+  }
+}
+
+.success-modal {
+  display: none;
+  position: absolute;
+  top: 150px;
+  z-index: 105;
+  img {
+    padding: 20px 0;
   }
 }
 

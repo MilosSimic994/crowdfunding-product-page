@@ -263,7 +263,7 @@ header
 }
 
 .modal .packages {
-  transform: translateY(-50%);
+  transform: translateY(-40%);
 }
 
 .modal .packages__title div {
@@ -353,6 +353,17 @@ header
 
 .modal .packages .active {
   border: 2px solid #3cb4ac;
+}
+
+.success-modal {
+  display: none;
+  position: absolute;
+  top: 150px;
+  z-index: 105;
+}
+
+.success-modal img {
+  padding: 20px 0;
 }
 
 .show {

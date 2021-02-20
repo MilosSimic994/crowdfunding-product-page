@@ -6,7 +6,10 @@ const modalPackage = document.querySelector(".modal");
 const selectBtn = document.querySelectorAll(".select");
 const closeModal = document.getElementById("close-modal");
 const packageArticle = document.querySelectorAll(".package");
-
+const continueBtns = document.querySelectorAll(".countinue");
+const successModal = document.querySelector(".success-modal");
+console.log(successModal);
+console.log(continueBtns);
 //open/close menu
 function toggleMenu() {
   menu.classList.toggle("show");
@@ -22,6 +25,16 @@ function closePackageModal() {
   modalPackage.classList.remove("show");
 }
 
+//open package modal
+selectBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    modalPackage.classList.toggle("show");
+    modalPackage.scrollIntoView();
+    console.log("misa");
+  });
+});
+
+//open pricing modal
 packageArticle.forEach((element) => {
   element.addEventListener("click", (e) => {
     const selectedPackage = e.currentTarget;
@@ -37,12 +50,19 @@ packageArticle.forEach((element) => {
   });
 });
 
-//open package modal
-selectBtn.forEach((btn) => {
+//finis purchase
+
+continueBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    modalPackage.classList.toggle("show");
-    modalPackage.scrollIntoView();
-    console.log("misa");
+    successModal.classList.toggle("show");
+    modalPackage.classList.remove("show");
+    bgModal.classList.toggle("show");
+    successModal.scrollIntoView();
+    if (successModal.classList.contains("show")) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "visible";
+    }
   });
 });
 
