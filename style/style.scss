@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+//variable
+$ModerateCyan: hsl(176, 50%, 47%);
+$DarkCyan: hsl(176, 72%, 28%);
+$Black: hsl(0, 0%, 0%);
+$DarkGray: hsl(0, 0%, 48%);
+$LightGray: rgb(200, 200, 200);
+$font: 16px;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+//basic
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $Black;
+}
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  @include flex(flex-start, center, row);
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+h5 {
+  font-size: 1.3rem;
+  color: $ModerateCyan;
+  font-weight: 500;
+}
+h6 {
+  font-size: 1.1rem;
+  color: $DarkGray;
+}
+p,
+span {
+  color: $DarkGray;
+  font-size: $font;
+  padding: 20px 0;
+  line-height: 1.6;
+}
+hr {
+  background: $LightGray;
+  color: $LightGray;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  position: relative;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  font-family: "Commissioner", sans-serif;
+  position: relative;
+}
+.section {
+  @include flex(center, center, column);
+  width: 90%;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.btn {
+  background: $ModerateCyan;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 40px;
+  border: none;
+  font-size: $font;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background: $DarkCyan;
+  }
+}
+
+.bg {
+  display: none;
+  background: rgba(12, 12, 12, 0.561);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+/*************
+header
+************/
+.header {
+  background: url(/images/image-hero-desktop.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+  @include flex(flex-start, center, column);
+
+  nav {
+    @include flex(space-between, center, row);
+    width: 80%;
+    padding: 30px 0;
+    position: relative;
+    z-index: 101;
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      background: #fff;
+      width: 100%;
+      border-radius: 10px;
+
+      li {
+        padding: 20px 10px;
+        border-bottom: 1px solid $LightGray;
+
+        a {
+          color: $Black;
+          font-size: 1.3rem;
+          text-transform: capitalize;
+        }
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+    }
+    .show {
+      display: block;
+    }
+    #hamburger {
+      cursor: pointer;
+    }
+  }
+}
+
+.mastercraft {
+  margin-top: -80px;
+  padding: 40px 20px;
+  .logo {
+    margin-top: -70px;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  .buttons {
+    @include flex(space-between, center, row);
+    width: 100%;
+  }
+}
+
+.numbers {
+  @include flex(space-between, center, column);
+  text-align: center;
+  article {
+    p {
+      letter-spacing: 2px;
+    }
+  }
+
+  .line {
+    width: 100px;
+    height: 1px;
+    background: $DarkGray;
+    margin-bottom: 30px;
+  }
+}
+
+.about {
+  .pricing {
+    margin: 20px 0;
+    border: 1px solid $LightGray;
+    border-radius: 10px;
+    padding: 20px;
+
+    h2 {
+      margin-bottom: 20px;
+      span {
+        margin-left: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.zero-stock {
+  opacity: 0.4;
+  .btn {
+    background: $DarkGray;
+  }
+}
+
+.modal {
+  background-color: rgba(12, 12, 12, 0.561);
+  width: 100%;
+  height: 100%;
+  @include flex(center, center, column);
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 103;
+  .packages {
+    // margin-top: -1500px;
+    transform: translateY(-50%);
+    &__title {
+      div {
+        @include flex(space-between, center, row);
+        h3 {
+          margin: initial;
+        }
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+    .package {
+      border: 1px solid $LightGray;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+
+      &__title {
+        @include flex(flex-start, center, row);
+        h4 {
+          margin-bottom: initial;
+        }
+        .o {
+          border: 1px solid $LightGray;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          margin-right: 20px;
+        }
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        span {
+          margin-left: 20px;
+        }
+      }
+
+      &__pricing {
+        @include flex(center, center, column);
+        padding: 20px 0;
+        display: none;
+
+        .cta {
+          @include flex(space-between, center, row);
+          padding: 20px 0;
+          input[type="number"] {
+            padding: 20px 10px;
+            border-radius: 40px;
+            font-size: $font;
+            border: 1px solid $LightGray;
+            width: 45%;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            outline: none;
+          }
+          input[type="button"] {
+            padding: 20px 30px;
+          }
+        }
+      }
+      .show {
+        display: flex;
+      }
+    }
+    .active {
+      border: 2px solid $ModerateCyan;
+    }
+  }
+}
+
+.show {
+  display: flex;
+}
