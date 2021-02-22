@@ -75,6 +75,7 @@ hr {
 
 html {
   position: relative;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -224,6 +225,37 @@ header
   margin-bottom: 30px;
 }
 
+input[type="range"] {
+  appearance: none;
+  width: 70%;
+}
+
+input[type="range"]::-moz-range-track,
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1.2em;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #e4e4e4;
+  overflow: hidden;
+  outline: none;
+}
+
+input[type="range"]::-moz-range-progress {
+  background: #3cb4ac;
+  border-radius: 20px;
+  height: 100%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  display: none;
+  background: #3cb4ac;
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
 .about .pricing {
   margin: 20px 0;
   border: 1px solid #c8c8c8;
@@ -358,7 +390,7 @@ header
 .success-modal {
   display: none;
   position: absolute;
-  top: 150px;
+  top: 100px;
   z-index: 105;
 }
 
