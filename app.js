@@ -20,6 +20,8 @@ function counting(value) {
   currentBackers += 1;
   total.innerText = `$${sum}`;
   totalBacker.innerText = currentBackers;
+
+  setSuccessModal();
 }
 
 //open/close menu
@@ -31,6 +33,11 @@ function toggleMenu() {
   } else {
     body.style.overflow = "visible";
   }
+}
+//open package modal
+function openPackageModal() {
+  modalPackage.classList.toggle("show");
+  modalPackage.scrollIntoView();
 }
 //close package
 function closePackageModal() {
@@ -50,64 +57,70 @@ function setSuccessModal() {
     body.style.overflow = "hidden";
   }, 500);
 }
+//return to the initial
 function removeFinishModal() {
   successModal.classList.remove("show");
   bgModal.classList.remove("show");
   body.style.overflow = "visible";
 }
-
-//open package modal
-selectBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    modalPackage.classList.toggle("show");
-    modalPackage.scrollIntoView();
-    console.log("misa");
-  });
-});
+//adding style for active package
+function addActive(el, style) {
+  el.classList.add(`${style}`);
+}
+//removing style from active package
+function removeActive(el, style) {
+  el.classList.remove(`${style}`);
+}
 
 //open pricing modal
-//ovo su sel;ektovani naslovi
 packageArticle.forEach((element) => {
   element.addEventListener("click", (e) => {
+    //selecting element for add "active" class
     const selectedPackage = e.currentTarget.parentElement;
-    //div sa inputom
     const pricing = selectedPackage.querySelector(".package__pricing");
+    const checked = selectedPackage.querySelector(".o div");
 
     packageArticle.forEach((item) => {
+      //selecting element for remove "active" class
       const package = item.parentElement;
       const pricingEl = package.querySelector(".package__pricing");
+      const checkBtn = package.querySelector(".o div");
+
       if (package.classList.contains("active")) {
-        item.parentElement.classList.remove("active");
-        pricingEl.classList.remove("show");
+        removeActive(package, "active");
+        removeActive(pricingEl, "show");
+        removeActive(checkBtn, "check");
       } else {
-        selectedPackage.classList.add("active");
-        pricing.classList.add("show");
+        addActive(selectedPackage, "active");
+        addActive(pricing, "show");
+        addActive(checked, "check");
       }
     });
-    //tu dodajem klasu da ih prikaze
-    // pricing.classList.toggle("show");
   });
 });
 
 //finis purchase
-
 continueBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     pladge.forEach((input) => {
       let pladge = input.dataset.pladge;
       let value = input.value;
       if (pladge === "25" && value >= "25") {
-        setSuccessModal();
         counting(value);
       } else if (pladge === "75" && value >= "75") {
-        setSuccessModal();
+        counting(value);
       }
+      input.value = "";
     });
   });
 });
 
-//Event LIsteners
+//Event Listeners
 hamburger.addEventListener("click", toggleMenu);
 closeModal.addEventListener("click", closePackageModal);
 gotItBtn.addEventListener("click", removeFinishModal);
-console.log(selectBtn);
+
+//open package modal
+selectBtn.forEach((btn) => {
+  btn.addEventListener("click", openPackageModal);
+});

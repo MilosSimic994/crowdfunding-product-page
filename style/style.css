@@ -206,6 +206,11 @@ header
   width: 100%;
 }
 
+.mastercraft .buttons .bookmark {
+  color: #147b74;
+  font-size: 35px;
+}
+
 .numbers {
   display: flex;
   justify-content: space-between;
@@ -325,18 +330,35 @@ input[type="range"]::-moz-range-thumb {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .modal .packages .package__title h4 {
   margin-bottom: initial;
 }
 
+.modal .packages .package__title input[type="radio"] {
+  background: #3cb4ac;
+}
+
 .modal .packages .package__title .o {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   border: 1px solid #c8c8c8;
   border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.modal .packages .package__title .o .check {
+  border-radius: 50%;
+  background: #3cb4ac;
   width: 20px;
   height: 20px;
-  margin-right: 20px;
+  margin: 1px;
 }
 
 .modal .packages .package h2 {
@@ -354,6 +376,7 @@ input[type="range"]::-moz-range-thumb {
   flex-direction: column;
   padding: 20px 0;
   display: none;
+  border-top: 1px solid #c8c8c8;
 }
 
 .modal .packages .package__pricing .cta {

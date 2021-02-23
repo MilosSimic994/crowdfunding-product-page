@@ -183,6 +183,10 @@ header
   .buttons {
     @include flex(space-between, center, row);
     width: 100%;
+    .bookmark {
+      color: $DarkCyan;
+      font-size: 35px;
+    }
   }
 }
 
@@ -265,7 +269,6 @@ input[type="range"]::-moz-range-thumb {
   top: 0;
   z-index: 103;
   .packages {
-    // margin-top: -1500px;
     transform: translateY(-40%);
     &__title {
       div {
@@ -286,15 +289,29 @@ input[type="range"]::-moz-range-thumb {
 
       &__title {
         @include flex(flex-start, center, row);
+        cursor: pointer;
+
         h4 {
           margin-bottom: initial;
         }
+        input[type="radio"] {
+          background: $ModerateCyan;
+        }
         .o {
+          @include flex(center, center, row);
           border: 1px solid $LightGray;
           border-radius: 50%;
-          width: 20px;
-          height: 20px;
+          width: 30px;
+          height: 30px;
           margin-right: 20px;
+
+          .check {
+            border-radius: 50%;
+            background: $ModerateCyan;
+            width: 20px;
+            height: 20px;
+            margin: 1px;
+          }
         }
       }
 
@@ -309,6 +326,7 @@ input[type="range"]::-moz-range-thumb {
         @include flex(center, center, column);
         padding: 20px 0;
         display: none;
+        border-top: 1px solid $LightGray;
 
         .cta {
           @include flex(space-between, center, row);
