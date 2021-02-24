@@ -11,15 +11,17 @@ const successModal = document.querySelector(".success-modal");
 const gotItBtn = document.getElementById("got-it");
 const pladge = document.querySelectorAll(".pladge");
 const total = document.getElementById("total-money");
-const totalBacker = document.getElementById("total-backer");
+const backer = document.getElementById("total-backer");
 
 function counting(value) {
-  let sum = 89914;
-  sum += +value;
-  let currentBackers = 5007;
-  currentBackers += 1;
-  total.innerText = `$${sum}`;
-  totalBacker.innerText = currentBackers;
+  let currentMoney = +total.innerText;
+  currentMoney += +value;
+
+  let curretBacker = +backer.innerText;
+  curretBacker++;
+
+  backer.innerText = `${curretBacker}`;
+  total.innerText = `${currentMoney}`;
 
   setSuccessModal();
 }
@@ -52,6 +54,7 @@ function setSuccessModal() {
     left: 0,
     top: 0,
   });
+
   //set hidden overflow
   setTimeout(() => {
     body.style.overflow = "hidden";
