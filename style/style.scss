@@ -8,11 +8,18 @@ $DarkGray: hsl(0, 0%, 48%);
 $LightGray: rgb(200, 200, 200);
 $font: 16px;
 
+//mixins
 @mixin flex($justify, $align, $direction) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direction;
+}
+
+@mixin medium {
+  @media screen and(min-width: 870px) {
+    @content;
+  }
 }
 
 //basic
@@ -94,6 +101,10 @@ body {
   padding: 40px 20px;
   border-radius: 10px;
   margin: 30px 0;
+  @include medium {
+    width: 85%;
+    max-width: 1000px;
+  }
 }
 .btn {
   background: $ModerateCyan;
@@ -144,15 +155,31 @@ header
       background: #fff;
       width: 100%;
       border-radius: 10px;
+      @include medium {
+        @include flex(space-between, center, row);
+        position: relative;
+        top: 0;
+        width: 30%;
+        background: none;
+      }
 
       li {
         padding: 20px 10px;
         border-bottom: 1px solid $LightGray;
+        @include medium {
+          border: none;
+        }
 
         a {
           color: $Black;
           font-size: 1.3rem;
           text-transform: capitalize;
+          @include medium {
+            color: #fff;
+            &:hover {
+              color: rgb(218, 216, 216);
+            }
+          }
         }
       }
       li:last-child {
@@ -164,6 +191,9 @@ header
     }
     #hamburger {
       cursor: pointer;
+      @include medium {
+        display: none;
+      }
     }
   }
 }
@@ -183,6 +213,9 @@ header
   .buttons {
     @include flex(space-between, center, row);
     width: 100%;
+    @include medium {
+      width: 85%;
+    }
     .bookmark {
       color: $DarkCyan;
       font-size: 35px;
@@ -193,9 +226,16 @@ header
 .numbers {
   @include flex(space-between, center, column);
   text-align: center;
+  @include medium {
+    @include flex(space-between, center, row);
+    width: 85%;
+  }
   article {
     p {
       letter-spacing: 2px;
+    }
+    h2 {
+      margin-bottom: 0;
     }
   }
 
@@ -204,11 +244,20 @@ header
     height: 1px;
     background: $DarkGray;
     margin-bottom: 30px;
+
+    @include medium {
+      width: 1px;
+      height: 80px;
+      margin: 0px 30px;
+    }
   }
 }
 input[type="range"] {
   appearance: none;
   width: 70%;
+  @include medium {
+    width: 85%;
+  }
 }
 
 input[type="range"]::-moz-range-track,
@@ -236,17 +285,41 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .about {
+  hgroup {
+    @include medium {
+      width: 85%;
+    }
+  }
   .pricing {
     margin: 20px 0;
     border: 1px solid $LightGray;
     border-radius: 10px;
     padding: 20px;
+    position: relative;
 
     h2 {
       margin-bottom: 20px;
       span {
         margin-left: 20px;
         font-weight: 400;
+      }
+    }
+    @include medium {
+      width: 85%;
+    }
+    h5 {
+      @include medium {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+    }
+    .select {
+      @include medium {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        bottom: 40px;
       }
     }
   }
@@ -256,6 +329,12 @@ input[type="range"]::-moz-range-thumb {
   opacity: 0.4;
   .btn {
     background: $DarkGray;
+    @include medium {
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      bottom: 40px;
+    }
   }
 }
 
@@ -271,6 +350,9 @@ input[type="range"]::-moz-range-thumb {
   .packages {
     transform: translateY(-40%);
     &__title {
+      @include medium {
+        width: 85%;
+      }
       div {
         @include flex(space-between, center, row);
         h3 {
@@ -286,11 +368,23 @@ input[type="range"]::-moz-range-thumb {
       border-radius: 10px;
       padding: 20px;
       margin: 20px 0;
+      position: relative;
+
+      @include medium {
+        width: 85%;
+      }
 
       &__title {
         @include flex(flex-start, center, row);
         cursor: pointer;
 
+        hgroup {
+          width: 100%;
+          @include flex(flex-start, center, row);
+          h4 {
+            margin-right: 20px;
+          }
+        }
         h4 {
           margin-bottom: initial;
         }
@@ -320,6 +414,11 @@ input[type="range"]::-moz-range-thumb {
         span {
           margin-left: 20px;
         }
+        @include medium {
+          position: absolute;
+          top: 8px;
+          right: 30px;
+        }
       }
 
       &__pricing {
@@ -327,7 +426,10 @@ input[type="range"]::-moz-range-thumb {
         padding: 20px 0;
         display: none;
         border-top: 1px solid $LightGray;
-
+        @include medium {
+          @include flex(space-between, center, row);
+          display: none;
+        }
         .cta {
           @include flex(space-between, center, row);
           padding: 20px 0;
@@ -363,6 +465,10 @@ input[type="range"]::-moz-range-thumb {
   z-index: 105;
   img {
     padding: 20px 0;
+  }
+  @include medium {
+    width: 400px;
+    top: 200px;
   }
 }
 

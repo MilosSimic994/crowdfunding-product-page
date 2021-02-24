@@ -99,6 +99,13 @@ body {
   margin: 30px 0;
 }
 
+@media screen and (min-width: 870px) {
+  .section {
+    width: 85%;
+    max-width: 1000px;
+  }
+}
+
 .btn {
   background: #3cb4ac;
   color: white;
@@ -160,15 +167,43 @@ header
   border-radius: 10px;
 }
 
+@media screen and (min-width: 870px) {
+  .header nav .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    width: 30%;
+    background: none;
+  }
+}
+
 .header nav .menu li {
   padding: 20px 10px;
   border-bottom: 1px solid #c8c8c8;
+}
+
+@media screen and (min-width: 870px) {
+  .header nav .menu li {
+    border: none;
+  }
 }
 
 .header nav .menu li a {
   color: black;
   font-size: 1.3rem;
   text-transform: capitalize;
+}
+
+@media screen and (min-width: 870px) {
+  .header nav .menu li a {
+    color: #fff;
+  }
+  .header nav .menu li a:hover {
+    color: #dad8d8;
+  }
 }
 
 .header nav .menu li:last-child {
@@ -181,6 +216,12 @@ header
 
 .header nav #hamburger {
   cursor: pointer;
+}
+
+@media screen and (min-width: 870px) {
+  .header nav #hamburger {
+    display: none;
+  }
 }
 
 .mastercraft {
@@ -206,6 +247,12 @@ header
   width: 100%;
 }
 
+@media screen and (min-width: 870px) {
+  .mastercraft .buttons {
+    width: 85%;
+  }
+}
+
 .mastercraft .buttons .bookmark {
   color: #147b74;
   font-size: 35px;
@@ -219,8 +266,22 @@ header
   text-align: center;
 }
 
+@media screen and (min-width: 870px) {
+  .numbers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 85%;
+  }
+}
+
 .numbers article p {
   letter-spacing: 2px;
+}
+
+.numbers article h2 {
+  margin-bottom: 0;
 }
 
 .numbers .line {
@@ -230,9 +291,23 @@ header
   margin-bottom: 30px;
 }
 
+@media screen and (min-width: 870px) {
+  .numbers .line {
+    width: 1px;
+    height: 80px;
+    margin: 0px 30px;
+  }
+}
+
 input[type="range"] {
   appearance: none;
   width: 70%;
+}
+
+@media screen and (min-width: 870px) {
+  input[type="range"] {
+    width: 85%;
+  }
 }
 
 input[type="range"]::-moz-range-track,
@@ -261,11 +336,18 @@ input[type="range"]::-moz-range-thumb {
   height: 100%;
 }
 
+@media screen and (min-width: 870px) {
+  .about hgroup {
+    width: 85%;
+  }
+}
+
 .about .pricing {
   margin: 20px 0;
   border: 1px solid #c8c8c8;
   border-radius: 10px;
   padding: 20px;
+  position: relative;
 }
 
 .about .pricing h2 {
@@ -277,12 +359,44 @@ input[type="range"]::-moz-range-thumb {
   font-weight: 400;
 }
 
+@media screen and (min-width: 870px) {
+  .about .pricing {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .about .pricing h5 {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .about .pricing .select {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+  }
+}
+
 .zero-stock {
   opacity: 0.4;
 }
 
 .zero-stock .btn {
   background: #7a7a7a;
+}
+
+@media screen and (min-width: 870px) {
+  .zero-stock .btn {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+  }
 }
 
 .modal {
@@ -301,6 +415,12 @@ input[type="range"]::-moz-range-thumb {
 
 .modal .packages {
   transform: translateY(-40%);
+}
+
+@media screen and (min-width: 870px) {
+  .modal .packages__title {
+    width: 85%;
+  }
 }
 
 .modal .packages__title div {
@@ -323,6 +443,13 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 10px;
   padding: 20px;
   margin: 20px 0;
+  position: relative;
+}
+
+@media screen and (min-width: 870px) {
+  .modal .packages .package {
+    width: 85%;
+  }
 }
 
 .modal .packages .package__title {
@@ -331,6 +458,18 @@ input[type="range"]::-moz-range-thumb {
   align-items: center;
   flex-direction: row;
   cursor: pointer;
+}
+
+.modal .packages .package__title hgroup {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.modal .packages .package__title hgroup h4 {
+  margin-right: 20px;
 }
 
 .modal .packages .package__title h4 {
@@ -369,6 +508,14 @@ input[type="range"]::-moz-range-thumb {
   margin-left: 20px;
 }
 
+@media screen and (min-width: 870px) {
+  .modal .packages .package h2 {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+  }
+}
+
 .modal .packages .package__pricing {
   display: flex;
   justify-content: center;
@@ -377,6 +524,16 @@ input[type="range"]::-moz-range-thumb {
   padding: 20px 0;
   display: none;
   border-top: 1px solid #c8c8c8;
+}
+
+@media screen and (min-width: 870px) {
+  .modal .packages .package__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    display: none;
+  }
 }
 
 .modal .packages .package__pricing .cta {
@@ -419,6 +576,13 @@ input[type="range"]::-moz-range-thumb {
 
 .success-modal img {
   padding: 20px 0;
+}
+
+@media screen and (min-width: 870px) {
+  .success-modal {
+    width: 400px;
+    top: 200px;
+  }
 }
 
 .show {
