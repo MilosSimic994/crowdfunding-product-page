@@ -349,6 +349,9 @@ input[type="range"]::-moz-range-thumb {
   top: 0;
   z-index: 103;
   .packages {
+    h2 {
+      visibility: hidden;
+    }
     transform: translateY(-40%);
     &__title {
       @include medium {

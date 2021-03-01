@@ -417,6 +417,10 @@ input[type="range"]::-moz-range-thumb {
   transform: translateY(-40%);
 }
 
+.modal .packages h2 {
+  visibility: hidden;
+}
+
 @media screen and (min-width: 870px) {
   .modal .packages__title {
     width: 85%;
