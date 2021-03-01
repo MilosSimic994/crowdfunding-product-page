@@ -258,6 +258,10 @@ header
   font-size: 35px;
 }
 
+#section-title {
+  display: none;
+}
+
 .numbers {
   display: flex;
   justify-content: space-between;
