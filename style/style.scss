@@ -285,11 +285,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .about {
-  hgroup {
+  p {
     @include medium {
       width: 85%;
     }
   }
+
   .pricing {
     margin: 20px 0;
     border: 1px solid $LightGray;
