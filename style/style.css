@@ -254,8 +254,46 @@ header
 }
 
 .mastercraft .buttons .bookmark {
-  color: #147b74;
-  font-size: 35px;
+  visibility: hidden;
+  filter: grayscale(100%);
+  position: relative;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 870px) {
+  .mastercraft .buttons .bookmark {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    color: #147b74;
+    padding: 0 40px 0 0;
+    border-radius: 40px;
+  }
+}
+
+.mastercraft .buttons .bookmark img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 15px;
+  visibility: visible;
+}
+
+@media screen and (min-width: 870px) {
+  .mastercraft .buttons .bookmark img {
+    position: relative;
+    right: unset;
+    top: unset;
+    transform: translateY(0);
+  }
+}
+
+.mastercraft .buttons .active-bokmark {
+  filter: none;
 }
 
 #section-title {

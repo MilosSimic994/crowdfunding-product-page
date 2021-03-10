@@ -12,6 +12,13 @@ const gotItBtn = document.getElementById("got-it");
 const pladge = document.querySelectorAll(".pladge");
 const total = document.getElementById("total-money");
 const backer = document.getElementById("total-backer");
+const bookMark = document.querySelector(".bookmark");
+
+// Toggle bookmark style
+
+function toggleBookmark() {
+  bookMark.classList.toggle("active-bokmark");
+}
 
 function counting(value) {
   let currentMoney = +total.innerText;
@@ -127,3 +134,5 @@ gotItBtn.addEventListener("click", removeFinishModal);
 selectBtn.forEach((btn) => {
   btn.addEventListener("click", openPackageModal);
 });
+
+bookMark.addEventListener("click", toggleBookmark);
