@@ -7,6 +7,31 @@ a {
   text-decoration: none;
 }
 
+hr {
+  background: #c8c8c8;
+  color: #c8c8c8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e7e7e7;
+  font-family: "Commissioner", sans-serif;
+  position: relative;
+}
+
 h1,
 h2,
 h3,
@@ -62,31 +87,6 @@ span {
   line-height: 1.6;
 }
 
-hr {
-  background: #c8c8c8;
-  color: #c8c8c8;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  position: relative;
-  scroll-behavior: smooth;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #e7e7e7;
-  font-family: "Commissioner", sans-serif;
-  position: relative;
-}
-
 .section {
   display: flex;
   justify-content: center;
@@ -104,6 +104,10 @@ body {
     width: 85%;
     max-width: 1000px;
   }
+}
+
+#section-title {
+  display: none;
 }
 
 .btn {
@@ -130,6 +134,43 @@ body {
   top: 0;
   z-index: 100;
   overflow: hidden;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 70%;
+}
+
+@media screen and (min-width: 870px) {
+  input[type="range"] {
+    width: 85%;
+  }
+}
+
+input[type="range"]::-moz-range-track,
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1.2em;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #e4e4e4;
+  overflow: hidden;
+  outline: none;
+}
+
+input[type="range"]::-moz-range-progress {
+  background: #3cb4ac;
+  border-radius: 20px;
+  height: 100%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  display: none;
+  background: #3cb4ac;
+  border: none;
+  outline: none;
+  height: 100%;
 }
 
 /*************
@@ -296,10 +337,6 @@ header
   filter: none;
 }
 
-#section-title {
-  display: none;
-}
-
 .numbers {
   display: flex;
   justify-content: space-between;
@@ -339,43 +376,6 @@ header
     height: 80px;
     margin: 0px 30px;
   }
-}
-
-input[type="range"] {
-  appearance: none;
-  width: 70%;
-}
-
-@media screen and (min-width: 870px) {
-  input[type="range"] {
-    width: 85%;
-  }
-}
-
-input[type="range"]::-moz-range-track,
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 1.2em;
-  cursor: pointer;
-  border-radius: 20px;
-  background: #e4e4e4;
-  overflow: hidden;
-  outline: none;
-}
-
-input[type="range"]::-moz-range-progress {
-  background: #3cb4ac;
-  border-radius: 20px;
-  height: 100%;
-}
-
-input[type="range"]::-moz-range-thumb {
-  appearance: none;
-  display: none;
-  background: #3cb4ac;
-  border: none;
-  outline: none;
-  height: 100%;
 }
 
 @media screen and (min-width: 870px) {

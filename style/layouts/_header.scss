@@ -1,0 +1,67 @@
+/*************
+header
+************/
+.header {
+    background: url(/images/image-hero-desktop.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+    @include flex(flex-start, center, column);
+  
+    nav {
+      @include flex(space-between, center, row);
+      width: 80%;
+      padding: 30px 0;
+      position: relative;
+      z-index: 101;
+  
+      .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        background: #fff;
+        width: 100%;
+        border-radius: 10px;
+        @include medium {
+          @include flex(space-between, center, row);
+          position: relative;
+          top: 0;
+          width: 30%;
+          background: none;
+        }
+  
+        li {
+          padding: 20px 10px;
+          border-bottom: 1px solid $LightGray;
+          @include medium {
+            border: none;
+          }
+  
+          a {
+            color: $Black;
+            font-size: 1.3rem;
+            text-transform: capitalize;
+            @include medium {
+              color: #fff;
+              &:hover {
+                color: rgb(218, 216, 216);
+              }
+            }
+          }
+        }
+        li:last-child {
+          border-bottom: none;
+        }
+      }
+      .show {
+        display: block;
+      }
+      #hamburger {
+        cursor: pointer;
+        @include medium {
+          display: none;
+        }
+      }
+    }
+  }

@@ -1,0 +1,14 @@
+.btn {
+    background: $ModerateCyan;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 40px;
+    border: none;
+    font-size: $font;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background: $DarkCyan;
+    }
+  }
+  

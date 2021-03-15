@@ -1,0 +1,29 @@
+.numbers {
+    @include flex(space-between, center, column);
+    text-align: center;
+    @include medium {
+      @include flex(space-between, center, row);
+      width: 85%;
+    }
+    article {
+      p {
+        letter-spacing: 2px;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  
+    .line {
+      width: 100px;
+      height: 1px;
+      background: $DarkGray;
+      margin-bottom: 30px;
+  
+      @include medium {
+        width: 1px;
+        height: 80px;
+        margin: 0px 30px;
+      }
+    }
+  }

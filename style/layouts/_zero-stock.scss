@@ -1,0 +1,13 @@
+.zero-stock {
+    opacity: 0.4;
+    .btn {
+      background: $DarkGray;
+      @include medium {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        bottom: 40px;
+      }
+    }
+  }
+  

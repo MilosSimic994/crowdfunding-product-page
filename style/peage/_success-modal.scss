@@ -1,0 +1,13 @@
+.success-modal {
+    display: none;
+    position: absolute;
+    top: 100px;
+    z-index: 105;
+    img {
+      padding: 20px 0;
+    }
+    @include medium {
+      width: 400px;
+      top: 200px;
+    }
+  }

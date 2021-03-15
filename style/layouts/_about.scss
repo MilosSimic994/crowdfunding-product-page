@@ -1,0 +1,41 @@
+.about {
+    p {
+      @include medium {
+        width: 85%;
+      }
+    }
+  
+    .pricing {
+      margin: 20px 0;
+      border: 1px solid $LightGray;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+  
+      h2 {
+        margin-bottom: 20px;
+        span {
+          margin-left: 20px;
+          font-weight: 400;
+        }
+      }
+      @include medium {
+        width: 85%;
+      }
+      h5 {
+        @include medium {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+        }
+      }
+      .select {
+        @include medium {
+          display: inline-block;
+          position: absolute;
+          right: 20px;
+          bottom: 40px;
+        }
+      }
+    }
+  }
